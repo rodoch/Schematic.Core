@@ -5,10 +5,10 @@ namespace Schematic.Core
 {
     public interface IResourceRepository<T, TResourceFilter>
     {
-        Task<int> Create(T resource, int userID);
-        Task<T> Read(int id);
-        Task<int> Update(T resource, int userID);
-        Task<int> Delete(int id, int userID);
-        Task<List<T>> List(TResourceFilter filter);
+        Task<int> CreateAsync(T resource, int userID);
+        Task<T> ReadAsync(int id);
+        Task<int> UpdateAsync(T resource, int userID);
+        Task<int> DeleteAsync(int id, int userID);
+        Task<List<T>> ListAsync(TResourceFilter filter);
     }
 }
