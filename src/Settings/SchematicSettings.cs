@@ -13,7 +13,7 @@ namespace Schematic.Core
 
         public string ApplicationDescription { get; set; }
 
-        public string ApplicationIcon { get; set; }
+        public ApplicationIconSettings ApplicationIcon { get; set; }
 
         public string AssetDirectory { get; set; }
 
@@ -23,7 +23,7 @@ namespace Schematic.Core
 
         public string ContactEmail { get; set; }
 
-        public EmailSettings EmailSettings { get; set; }
+        public EmailSettings Email { get; set; }
 
         public double SetPasswordTimeLimitHours { get; set; }
     }
