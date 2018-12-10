@@ -8,6 +8,8 @@ namespace Schematic.Core
 
         string SearchQuery { get; set; }
         
-        Dictionary<string, string> Facets { get; set; }
+        string Facets { get; set; }
+        
+        Dictionary<string, string> FacetDictionary { get; set; }
     }
 }

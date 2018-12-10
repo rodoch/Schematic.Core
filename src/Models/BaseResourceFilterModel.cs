@@ -2,16 +2,16 @@ using System.Collections.Generic;
 
 namespace Schematic.Core
 {
-    public class ResourceExplorerModel
+    public class BaseResourceFilterModel
     {
-        public int? ResourceID { get; set; }
+        public int ActiveResourceID { get; set; }
 
-        public string ResourceType { get; set; }
+        public string SearchQuery { get; set; }
 
         private string _facets;
         public string Facets
         {
-            get => _facets;
+            get => _facets; 
             set
             {
                 _facets = value;
