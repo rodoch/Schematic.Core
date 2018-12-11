@@ -8,6 +8,22 @@ namespace Schematic.Core
 
         public T Resource { get; set; }
 
-        public Dictionary<string, string> Facets { get; set; }
+        private string _facets;
+        public string Facets
+        {
+            get => _facets;
+            set
+            {
+                _facets = value;
+                UpdateFacetDictionary();
+            }
+        }
+
+        public Dictionary<string, string> FacetDictionary { get; set; }
+
+        protected void UpdateFacetDictionary()
+        {
+            FacetDictionary = _facets.GetFacets();
+        }
     }
 }
