@@ -2,14 +2,18 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <PackageId>Schematic.Core</PackageId>
-    <Version>0.1.13</Version>
-    <Authors>Ronan Doherty</Authors>
-    <PackageProjectUrl>https://github.com/rodoch/Schematic.Core/</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/rodoch/Schematic.Core/</RepositoryUrl>
-    <PackageTags>schematic cms</PackageTags>
-    <PackageReleaseNotes>Prerelease</PackageReleaseNotes>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>Schematic.Core</PackageId>
+    <PackageTags>schematic;cms</PackageTags>
+    <Version>0.1.14</Version>
+    <Authors>Ronan Doherty</Authors>
+    <Company>Ronan Doherty</Company>
+    <Description>Core entities, interfaces and settings for the Schematic CMS framework</Description>
+    <PackageIconUrl></PackageIconUrl>
+    <PackageProjectUrl>https://github.com/rodoch/Schematic.Core/</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/rodoch/Schematic.Core/blob/master/LICENSE</PackageLicenseUrl>
+    <RepositoryUrl>https://github.com/rodoch/Schematic.Core/</RepositoryUrl>
+    <PackageReleaseNotes>Prerelease</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
