@@ -41,7 +41,7 @@ namespace Schematic.Core
         /// </summary>
         /// <param name="url">The URL string to sanitize.</param>
         /// <returns>The sanitized URL.</returns>
-        public static string SanitizeUrl(string url) => url.IsNullOrEmpty() ? url : _sanitizeUrl.Replace(url, "");
+        public static string SanitizeUrl(string url) => url.IsNullOrWhiteSpace() ? url : _sanitizeUrl.Replace(url, "");
         
         /// <summary>
         /// Linkifies a URL, returning an anchor-wrapped version if sane.
@@ -51,7 +51,7 @@ namespace Schematic.Core
         /// <returns>The linified string, or the encoded string if not a safe URL.</returns>
         public static string Linkify(string s, string color = "#3D85B0")
         {
-            if (s.IsNullOrEmpty())
+            if (s.IsNullOrWhiteSpace())
             {
                 return string.Empty;
             }
