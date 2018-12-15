@@ -3,17 +3,17 @@ using System.Collections.Generic;
 
 namespace Schematic.Core
 {
-    public static class Extensions
+    public static class SchematicExtensions
     {
-        public static bool IsNullOrEmpty(this string s) => string.IsNullOrEmpty(s);
+        public static bool IsNullOrWhiteSpace(this string value) => string.IsNullOrWhiteSpace(value);
 
-        public static bool HasValue(this string s) => !IsNullOrEmpty(s);
+        public static bool HasValue(this string value) => !IsNullOrWhiteSpace(value);
 
-        public static dynamic HasValueOrDBNull(this string s)
+        public static dynamic HasValueOrDBNull(this string value)
         {
-            if (s.HasValue())
+            if (value.HasValue())
             {
-                return s;
+                return value;
             }
             else
             {
@@ -21,11 +21,11 @@ namespace Schematic.Core
             }
         }
 
-        public static dynamic HasValueOrDBNull(this int? i)
+        public static dynamic HasValueOrDBNull(this int? value)
         {
-            if (i != null)
+            if (value != null)
             {
-                return i;
+                return value;
             }
             else
             {

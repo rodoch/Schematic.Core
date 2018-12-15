@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace Schematic.Core
 {
-    public static class UrlSlugger
+    public static class UrlExtensions
     {
         // white space, em-dash, en-dash, underscore
         static readonly Regex WordDelimiters = new Regex(@"[\s—–_]", RegexOptions.Compiled);
@@ -21,7 +21,7 @@ namespace Schematic.Core
             // convert to lower case
             value = value.ToLowerInvariant();
 
-            // remove diacritics (accents)
+            // remove diacritics
             value = RemoveDiacritics(value);
 
             // ensure all word delimiters are hyphens

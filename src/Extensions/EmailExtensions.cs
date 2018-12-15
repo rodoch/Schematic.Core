@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 
 namespace Schematic.Core
 {
-    public static class Email
+    public static class EmailExtensions
     {
         private static readonly Regex _sanitizeUrl = new Regex(@"[^-a-z0-9+&@#/%?=~_|!:,.;\*\(\)\{\}]", RegexOptions.IgnoreCase | RegexOptions.Compiled);
 

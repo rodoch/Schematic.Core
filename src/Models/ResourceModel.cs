@@ -4,6 +4,11 @@ namespace Schematic.Core
 {
     public class ResourceModel<T>
     {
+        public ResourceModel()
+        {
+            ValidationErrors = new Dictionary<string, string>();
+        }
+
         public int ResourceID { get; set; }
 
         public T Resource { get; set; }
@@ -21,9 +26,16 @@ namespace Schematic.Core
 
         public Dictionary<string, string> FacetDictionary { get; set; }
 
+        public Dictionary<string, string> ValidationErrors { get; set; }
+
         protected void UpdateFacetDictionary()
         {
             FacetDictionary = _facets.GetFacets();
+        }
+
+        public ResourceModel<T> OnNew()
+        {
+            return this;
         }
     }
 }

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace Schematic.Core
 {
-    public class ResourceFilterModel<T> : IResourceFilter<T>
+    public class ResourceFilter<T> : IResourceFilter<T>
     {
         public int ActiveResourceID { get; set; }
         
