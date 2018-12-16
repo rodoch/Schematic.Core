@@ -2,14 +2,7 @@ namespace Schematic.Core
 {
     public class SchematicSettings
     {
-        public SchematicSettings() 
-        {
-            ApplicationName = "Schematic";
-            ApplicationDescription = "Schematic data management system";
-            SetPasswordTimeLimitHours = 24;
-        }
-
-        public string ApplicationName { get; set; }
+        public string ApplicationName { get; set; } = "Schematic";
 
         public string ApplicationDescription { get; set; }
 
@@ -23,8 +16,10 @@ namespace Schematic.Core
 
         public string ContactEmail { get; set; }
 
+        public DataStoreSettings DataStore { get; set; }
+
         public EmailSettings Email { get; set; }
 
-        public double SetPasswordTimeLimitHours { get; set; }
+        public double SetPasswordTimeLimitHours { get; set; } = 24;
     }
 }
