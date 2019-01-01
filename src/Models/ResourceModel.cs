@@ -6,10 +6,10 @@ namespace Schematic.Core
     {
         public ResourceModel()
         {
-            ValidationErrors = new Dictionary<string, string>();
+            _errors = new List<KeyValuePair<string, string>>();
         }
 
-        public int ResourceID { get; set; }
+        public int ID { get; set; }
 
         public T Resource { get; set; }
 
@@ -26,16 +26,18 @@ namespace Schematic.Core
 
         public Dictionary<string, string> FacetDictionary { get; set; }
 
-        public Dictionary<string, string> ValidationErrors { get; set; }
+        public List<KeyValuePair<string, string>> _errors { get; set; }
+        public IEnumerable<KeyValuePair<string, string>> Errors { get => _errors; }
 
         protected void UpdateFacetDictionary()
         {
             FacetDictionary = _facets.GetFacets();
         }
 
-        public ResourceModel<T> OnNew()
+        public void AddModelError(string key, string errorMessage)
         {
-            return this;
+            var error = new KeyValuePair<string, string>(key, errorMessage);
+            _errors.Add(error);
         }
     }
 }

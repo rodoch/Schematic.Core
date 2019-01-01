@@ -12,24 +12,24 @@ namespace Schematic.Core
 
         public string ToAddress { get; set; }
 
-        private string fromAddress;
+        private string _fromAddress;
         public string FromAddress
         {
-            get => fromAddress;
+            get => _fromAddress;
             set
             {
-                fromAddress = value;
+                _fromAddress = value;
                 SetMailAddress();
             }
         }
 
-        private string fromDisplayName;
+        private string _fromDisplayName;
         public string FromDisplayName
         {
-            get => fromDisplayName;
+            get => _fromDisplayName;
             set
             {
-                fromDisplayName = value;
+                _fromDisplayName = value;
                 SetMailAddress();
             }
         }
@@ -38,24 +38,24 @@ namespace Schematic.Core
 
         public int? SMTPPort { get; set; }
 
-        private string smtpUserName;
+        private string _smtpUserName;
         public string SMTPUserName
         {
-            get => smtpUserName;
+            get => _smtpUserName;
             set
             {
-                smtpUserName = value;
+                _smtpUserName = value;
                 SetCredentials();
             }
         }
 
-        private string smtpPassword;
+        private string _smtpPassword;
         public string SMTPPassword
         {
-            get => smtpPassword;
+            get => _smtpPassword;
             set
             {
-                smtpPassword = value;
+                _smtpPassword = value;
                 SetCredentials();
             }
         }
@@ -66,9 +66,9 @@ namespace Schematic.Core
         {
             try
             {
-                FromMailAddress = fromDisplayName.HasValue()
-                    ? new MailAddress(fromAddress, fromDisplayName)
-                    : new MailAddress(fromAddress);
+                FromMailAddress = _fromDisplayName.HasValue()
+                    ? new MailAddress(_fromAddress, _fromDisplayName)
+                    : new MailAddress(_fromAddress);
             }
             catch
             {
@@ -77,8 +77,8 @@ namespace Schematic.Core
         }
 
         private void SetCredentials() =>
-            SMTPCredentials = smtpUserName.HasValue() && smtpPassword.HasValue()
-                ? new NetworkCredential(smtpUserName, smtpPassword)
+            SMTPCredentials = _smtpUserName.HasValue() && _smtpPassword.HasValue()
+                ? new NetworkCredential(_smtpUserName, _smtpPassword)
                 : null;
     }
 }

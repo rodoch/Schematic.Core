@@ -6,7 +6,7 @@ namespace Schematic.Core
     {
         public int? ResourceID { get; set; }
 
-        public string ResourceType { get; set; }
+        public string ResourceName { get; set; }
 
         private string _facets;
         public string Facets
