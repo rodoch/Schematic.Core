@@ -1,38 +1,11 @@
 using System;
 using System.Collections.Generic;
+using Ansa.Extensions;
 
 namespace Schematic.Core
 {
     public static class SchematicExtensions
     {
-        public static bool IsNullOrWhiteSpace(this string value) => string.IsNullOrWhiteSpace(value);
-
-        public static bool HasValue(this string value) => !IsNullOrWhiteSpace(value);
-
-        public static dynamic HasValueOrDBNull(this string value)
-        {
-            if (value.HasValue())
-            {
-                return value;
-            }
-            else
-            {
-                return DBNull.Value;
-            }
-        }
-
-        public static dynamic HasValueOrDBNull(this int? value)
-        {
-            if (value != null)
-            {
-                return value;
-            }
-            else
-            {
-                return DBNull.Value;
-            }
-        }
-
         public static Dictionary<string, string> GetFacets(this string facets)
         {
             var result = new Dictionary<string, string>();

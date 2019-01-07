@@ -6,7 +6,7 @@ namespace Schematic.Core
     {
         public int ActiveResourceID { get; set; }
         
-        public string SearchQuery { get; set; }
+        public string Query { get; set; }
 
         private string _facets;
         public string Facets
